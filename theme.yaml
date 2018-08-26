@@ -1,0 +1,14 @@
+name: Csoon
+description: 'Coming Soon is a Bootstrap 4 coming soon theme perfect to act as your landing page for a project that is under construction!'
+author: NRuslan
+previewImage: 'assets/images/theme-preview.jpg'
+homepage: 'https://nruslan.com'
+code: '001'
+form:
+    fields:
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            default: Cooming Soon Page!
+require:
+    - October.Drivers

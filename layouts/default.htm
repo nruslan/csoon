@@ -1,0 +1,56 @@
+name = "Coming soon layout"
+description = "default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Coming soon page with video background designed by Start Bootstrap team">
+    <meta name="author" content="Ruslan Niyazimbetov">
+
+    <title>Coming Soon - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ 'assets/vendor/bootstrap/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{{ 'assets/fonts/source-sans-pro-merriweather.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/vendor/font-awesome/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ 'assets/css/coming-soon.min.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="{{ 'assets/videos/bg2.mp4'|theme }}" type="video/mp4">
+    </video>
+
+    <div class="masthead">
+        <div class="masthead-bg"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto">
+                    <div class="masthead-content text-white py-5 py-md-0">
+                        {% page %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        {% partial "social" %}
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'|theme }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ 'assets/js/coming-soon.min.js'|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+</body>
+</html>

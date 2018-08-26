@@ -1,0 +1,46 @@
+title = "index"
+url = "/"
+layout = "default"
+description = "coming soon index page"
+is_hidden = 0
+==
+<?php
+function onSend()
+{
+    $data = post();
+    
+    $rules = [
+        'email' => 'required|email',
+    ];
+    
+    $validation = Validator::make($data, $rules);
+    
+    if ($validation->fails()) {
+        throw new ValidationException($validation);
+    }
+
+    Mail::send('comingSoon', $data, function($message) {
+    
+        $message->to('youremail@host.com', 'Notify Me');
+        $message->subject('New subscriber');
+    
+    });
+    
+    Flash::success('Sent successfully!');
+}
+?>
+==
+<h1 class="mb-3">Coming Soon!</h1>
+<p class="mb-5">Our team of designers and developers are working hard to bring this website to live. Our target launch date is
+    <strong>January 2019</strong>! Use the form below to get notified about updates.</p>
+
+<form data-request="onSend" data-request-validate data-request-flash data-request-update="response: '#response'">
+    <div data-validate-error></div>
+<div class="input-group input-group-newsletter">
+    <input type="email" name="email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">
+    <div class="input-group-append">
+        <button class="btn btn-secondary" type="submit" data-attach-loading>Notify Me!</button>
+    </div>
+</div>
+</form>
+<div id="response"></div>
